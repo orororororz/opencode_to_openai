@@ -12,5 +12,7 @@
     "dev:deno": "deno --watch --allow-env --allow-net deno.mjs",
     "start:bun": "bun bun.mjs",
     "dev:bun": "bun --watch bun.mjs"
-  },"name": "gemini"
+  },
+  "name": "opencode-go-to-openai",
+  "description": "OpenAI-compatible proxy for OpenCode Go subscription"
 }
