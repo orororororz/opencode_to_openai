@@ -58,10 +58,37 @@ API Key 填你的 OpenCode Go API Key。
 
 ## 部署
 
-保留原项目的多平台入口：
+部署到以下提供商之一。如果你选择“按钮部署”，系统会引导你先 fork 仓库。
 
-- Vercel：`vercel deploy`
-- Netlify：`netlify deploy`
-- Cloudflare Workers：`wrangler deploy`
+### 使用 Vercel 部署
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/orororororz/opencode_to_openai.git&repository-name=opencode-to-openai)
+
+- 也可以使用 [Vercel CLI](https://vercel.com/docs/cli) 部署：`vercel deploy`
+- 本地运行：`vercel dev`
+- Vercel Functions [限制](https://vercel.com/docs/functions/limitations)（使用 Edge runtime）
+
+### 部署到 Netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/orororororz/opencode_to_openai.git)
+
+- 也可以使用 [Netlify CLI](https://docs.netlify.com/cli/get-started/) 部署：`netlify deploy`
+- 本地运行：`netlify dev`
+- 提供两个 API 基础路径：
+  - `/v1`（例如 `/v1/chat/completions`）
+  - `/edge/v1`
+- Netlify Functions / Edge Functions [限制](https://docs.netlify.com/functions/get-started/?fn-language=js#synchronous-function-2)
+
+### 部署到 Cloudflare Workers
+
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/orororororz/opencode_to_openai.git)
+
+- 也可以手动部署：将 [`src/worker.mjs`](src/worker.mjs) 的内容粘贴到 https://workers.cloudflare.com/playground 并点击 `Deploy`
+- 或使用 [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/)：`wrangler deploy`
+- 本地运行：`wrangler dev`
+- Cloudflare Workers [限制](https://developers.cloudflare.com/workers/platform/limits/)
+
+### Deno / Bun
+
 - Deno：`npm run start:deno`
 - Bun：`npm run start:bun`
